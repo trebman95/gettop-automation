@@ -10,8 +10,8 @@ driver_path = ChromeDriverManager().install()
 browser = webdriver.Chrome(service=Service(driver_path))
 
 #Locators
-browser.find_element(By.ID, 'username')
-browser.find_element(By.ID, 'password')
-browser.find_element(By.XPATH, "//label[@for='user_login']")
-browser.find_element(By.XPATH, "//button[@value='Reset password]")
-browser.find_element(By.XPATH, "//i[@class='icon-user']")
+browser.find_element(By.ID, 'username') #Username, login pop-up
+browser.find_element(By.ID, 'password') #Password #login pop-up
+browser.find_element(By.XPATH, "//label[@for='user_login']") #Username text above input field, forgot password
+browser.find_element(By.XPATH, "//button[@value='Reset password]") #Reset password button
+browser.find_element(By.XPATH, "//i[@class='icon-user']") #User icon (top right, next to cart)
