@@ -2,14 +2,13 @@
 
 <h2>Description</h2>
 In this project, I will walkthrough my API automation process using Postman to set up collections for organized API requests, using environment variables for flexibility, and writing test scripts to validate responses. I chain requests to simulate real-world workflows and conduct data-driven testing with external files to cover multiple test cases. I automated test execution by integrating Postman with CI/CD pipelines ensuring continuous testing and quality monitoring. In the Petstore API, JSON objects are used to interact with various aspects of the pet store. They represent data related to pets, orders, and users, allowing clients to create, update, retrieve, or delete these resources. 
-<img src="https://i.imgur.com/mFitgQx.jpg" height="80%" width="80%" alt="Administrator Account"/>
+<img src="https://i.imgur.com/k636bYH.jpg" height="80%" width="80%" alt="Administrator Account"/>
 <br />
 
 <h2>Concepts</h2>
 
 - <b>Functional Testing</b>
 - <b>Test Automation</b>
-- <b> UI Automation</b>
 - <b>Basic ID and XPath locators</b>
 - <b>Automation Scripts</b>
 
