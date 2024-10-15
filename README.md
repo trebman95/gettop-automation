@@ -9,6 +9,7 @@ In this project, I will walkthrough my API automation process using Postman to s
 
 - <b>Functional Testing</b>
 - <b>Test Automation</b>
+- <b> UI Automation</b>
 - <b>Basic ID and XPath locators</b>
 - <b>Automation Scripts</b>
 
