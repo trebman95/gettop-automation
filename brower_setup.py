@@ -20,3 +20,4 @@ browser.find_element(By.XPATH, "//h1[text()='My Account']") #MY ACCOUNT text
 browser.find_element(By.XPATH, "//a[text()='Accessories' and @class='nav-top-link']") #Accessories link in header
 browser.find_element(By.XPATH, "//p[contains(text(),'Lost your password?')]" ) #“Lost your password…” text
 browser.find_element(By.XPATH, "//ul[@id = 'menu-laptop-1']//a[text()='Accessories']") #Accessories link in footer
+
