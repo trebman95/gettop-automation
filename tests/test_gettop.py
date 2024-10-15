@@ -2,7 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
-#from time import sleep
+from time import sleep
 
 
 class TestGetTop:
@@ -19,6 +19,22 @@ class TestGetTop:
         #Verify correct page opens
         expected_result = 'HOME / TABLET'
         actual_result = browser.find_element(By.XPATH, "//nav[contains(@class,'breadcrumbs')]").text
+        assert actual_result == expected_result
+
+        browser.quit()
+
+    def test_empty_cart(self):
+        # Install and start the browser
+        driver_path = ChromeDriverManager().install()
+        browser = webdriver.Chrome(service=Service(driver_path))
+
+        # Click Cart icon on the homepage
+        browser.get('https://gettop.us/')
+        browser.find_element(By.XPATH, "//a[contains(@class,'header-cart-link is-small')]").click()#Cart top header
+
+        #Verify that the empy cart message is displayed on the next page
+        expected_result = 'Your cart is currently empty.'
+        actual_result = browser.find_element(By.XPATH, "//p[text()='Your cart is currently empty.']").text
         assert actual_result == expected_result
 
         browser.quit()
