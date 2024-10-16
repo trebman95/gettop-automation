@@ -45,20 +45,19 @@ class TestGetTop:
         actual_result = self.browser.find_element(By.XPATH, "//h3[text()='Login']").text
         assert actual_result == expected_result
 
-
-    def test_product_search(self):
-        # Search for thinkpad
+    @pytest.mark.parametrize('search_word', ['chromebook', 'samsung'])
+    def test_product_search(self, search_word):
+        # search_word='chromebook'
+        # Search for chromebook
         self.browser.get('https://gettop.us/')
         self.browser.find_element(By.XPATH, "//a[@aria-label='Search']").click()
-        self.browser.find_element(By.ID, "woocommerce-product-search-field-0").send_keys('thinkpad', Keys.ENTER)
+        self.browser.find_element(By.ID, "woocommerce-product-search-field-0").send_keys(search_word, Keys.ENTER)
         # Verify search results are shown
-        expected_text = 'HOME / SHOP / SEARCH RESULTS FOR “THINKPAD”'
+        expected_text = f'HOME / SHOP / SEARCH RESULTS FOR “{search_word.upper()}”' #'HOME / SHOP / SEARCH RESULTS FOR “CHROMEBOOK”'
         actual_text = self.browser.find_element(By.XPATH, "//nav[contains(@class, 'breadcrumbs')]").text
         assert actual_text == expected_text
-
-        expected_product = 'ThinkPad'
         actual_product_title = self.browser.find_element(By.XPATH, "//p[@class='name product-title']").text
-        assert expected_product in actual_product_title
+        assert search_word in actual_product_title.lower() # Chromebook A2 => chromebook a2
         sleep(3)
 
 
