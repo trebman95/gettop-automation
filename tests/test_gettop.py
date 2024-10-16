@@ -3,13 +3,13 @@ from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
 from time import sleep
-import pytest
+
 
 
 class TestGetTop:
     browser = None
 
-    def setup(self):
+    def setup_method(self):
         # Install and start the browser
         driver_path = ChromeDriverManager().install()
         self.browser = webdriver.Chrome(service=Service(driver_path))
@@ -29,19 +29,21 @@ class TestGetTop:
         self.browser.get('https://gettop.us/')
         self.browser.find_element(By.XPATH, "//a[contains(@class,'header-cart-link is-small')]").click()
         #Verify that the empy cart message is displayed on the next page
+        sleep(3)
         expected_result = 'Your cart is currently empty.'
         actual_result = self.browser.find_element(By.XPATH, "//p[text()='Your cart is currently empty.']").text
         assert actual_result == expected_result
 
-    def test_login_form(self):
+    def test_profile_icon(self):
         # Click on user profile icon on the homepage (top right, next to cart)
         self.browser.get('https://gettop.us/')
-        self.browser.find_element(By.XPATH, "//a[@class='nav-top-link nav-top-not-logged-in']").click()
+        self.browser.find_element(By.XPATH, "//i[@class='icon-user']").click()
         #Verify that the empy cart message is displayed on the next page
+        sleep(3)
         expected_result = 'LOGIN'
         actual_result = self.browser.find_element(By.XPATH, "//h3[text()='Login']").text
         assert actual_result == expected_result
 
 
-    def teardown(self):
+    def teardown_method(self):
         self.browser.quit()
