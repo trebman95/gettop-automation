@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
 from time import sleep
+import pytest
 
 
 
@@ -22,7 +23,6 @@ class TestGetTop:
         expected_result = 'HOME / TABLET'
         actual_result = self.browser.find_element(By.XPATH, "//nav[contains(@class,'breadcrumbs')]").text
         assert actual_result == expected_result
-
 
     def test_empty_cart(self):
         # Click Cart icon on the homepage
