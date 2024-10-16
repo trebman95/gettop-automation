@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
 from time import sleep
@@ -28,8 +29,8 @@ class TestGetTop:
         # Click Cart icon on the homepage
         self.browser.get('https://gettop.us/')
         self.browser.find_element(By.XPATH, "//a[contains(@class,'header-cart-link is-small')]").click()
-        #Verify that the empy cart message is displayed on the next page
         sleep(3)
+        #Verify that the empy cart message is displayed on the next page
         expected_result = 'Your cart is currently empty.'
         actual_result = self.browser.find_element(By.XPATH, "//p[text()='Your cart is currently empty.']").text
         assert actual_result == expected_result
@@ -38,11 +39,27 @@ class TestGetTop:
         # Click on user profile icon on the homepage (top right, next to cart)
         self.browser.get('https://gettop.us/')
         self.browser.find_element(By.XPATH, "//i[@class='icon-user']").click()
-        #Verify that the empy cart message is displayed on the next page
         sleep(3)
+        #Verify that the empy cart message is displayed on the next page
         expected_result = 'LOGIN'
         actual_result = self.browser.find_element(By.XPATH, "//h3[text()='Login']").text
         assert actual_result == expected_result
+
+
+    def test_product_search(self):
+        # Search for thinkpad
+        self.browser.get('https://gettop.us/')
+        self.browser.find_element(By.XPATH, "//a[@aria-label='Search']").click()
+        self.browser.find_element(By.ID, "woocommerce-product-search-field-0").send_keys('thinkpad', Keys.ENTER)
+        # Verify search results are shown
+        expected_text = 'HOME / SHOP / SEARCH RESULTS FOR “THINKPAD”'
+        actual_text = self.browser.find_element(By.XPATH, "//nav[contains(@class, 'breadcrumbs')]").text
+        assert actual_text == expected_text
+
+        expected_product = 'ThinkPad'
+        actual_product_title = self.browser.find_element(By.XPATH, "//p[@class='name product-title']").text
+        assert expected_product in actual_product_title
+        sleep(3)
 
 
     def teardown_method(self):
