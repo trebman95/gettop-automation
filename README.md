@@ -1,7 +1,7 @@
 # Gettop: Test Automation
 
 <h2>Description</h2>
-In this project, I will walkthrough my API automation process using Postman to set up collections for organized API requests, using environment variables for flexibility, and writing test scripts to validate responses. I chain requests to simulate real-world workflows and conduct data-driven testing with external files to cover multiple test cases. I automated test execution by integrating Postman with CI/CD pipelines ensuring continuous testing and quality monitoring. In the Petstore API, JSON objects are used to interact with various aspects of the pet store. They represent data related to pets, orders, and users, allowing clients to create, update, retrieve, or delete these resources. 
+In this test automation suite, built with Selenium and Pytest, validates key user interactions on the GetTop website. It includes tests for navigating to the 'Tablets' page, checking the empty cart message, verifying the 'Login' page via the profile icon, and testing the search functionality with different keywords (e.g., 'chromebook' and 'samsung'). Each test ensures the correct page elements are displayed, with browser sessions set up and closed automatically before and after execution.
 <img src="https://i.imgur.com/k636bYH.jpg" height="80%" width="80%" alt="Administrator Account"/>
 <br />
 
@@ -16,9 +16,10 @@ In this project, I will walkthrough my API automation process using Postman to s
 <h2>Languages and Utilities Used</h2>
 
 - <b>Selenium WebDriver</b>
-- <b>Python<b/>
+- <b>Python</b>
 - <b>PyCharm</b>
 - <b>PyTest</b>
+- <b> ChromeDev Tools</b>
 
 <h2>Environments Used </h2>
 
@@ -30,31 +31,27 @@ In this project, I will walkthrough my API automation process using Postman to s
 <h2>Project walk-through:</h2>
 
 <p align="center">
-This is the Swagger Editor that was used to access the pet store with JSON objects:  <br/>
-<img src="https://i.imgur.com/vPP72Q6.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-A POST request is being made to the /pet endpoint at https://petstore.swagger.io/v2/pet. The request body contains a JSON object representing a new pet being added to the store : <br/>
+Using ChromeDev Tools to identify the XPATH's and Locators through the HTML code of the website <br/>
 <img src="https://i.imgur.com/foIaaEm.png" height="80%" width="80%" alt="Administrator Account"/>
 <br />
 <br />
-A GET request is made to retrieve the details of a pet with the id 333997 from the Petstore API (/pet/{petId}). The response body shows the pet's details, such as id, name, category, tags, and status. :  <br/>
+This Selenium script sets up a Chrome browser session and locates various elements on a web page, such as login fields, buttons, and navigation links, using different selectors like ID and XPath for potential interaction.  <br/>
 <img src="https://i.imgur.com/AomMswT.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
-A PUT request is being made to update an existing pet's details in the Petstore API at the /pet endpoint. The pet with id 333997 is being updated, with the name changed to "Chico" and the photoUrls now containing two links. Added with scripts to check the response time less than 1 second. <br/>
+Verifies that clicking the 'Tablets' link on the homepage opens the correct page. <br/>
 <img src="https://i.imgur.com/WkkD2PP.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
-A DELETE request is being made to detail an existing pet's details in the Petstore API at the /pet endpoint. The pet with id 333997 is identified as "unknown" with the status code of 200 OK :  <br/>
+Confirms that an empty cart message is displayed after clicking the cart icon  <br/>
 <img src="https://i.imgur.com/5VFFJhv.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
-A GET request is being made to run the recent changes in the Petstore API. We see that there is a message of "Pet Not Found" after deleting a pet from the recent scripts.:  <br/>
+Ensures clicking the user profile icon leads to the 'Login' page.  <br/>
 <img src="https://i.imgur.com/ZACzquy.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
-Finally after running the results, the scripts have a 100% pass rate for automating the Petstore API :  <br/>
+Tests the search functionality with various keywords (e.g., 'chromebook' and 'samsung') and verifies the correct search results page appears.  <br/>
 <img src="https://i.imgur.com/MQAssLf.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
