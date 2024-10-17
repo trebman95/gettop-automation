@@ -33,27 +33,27 @@ In this test automation suite, built with Selenium and Pytest, validates key use
 
 <p align="center">
 Using ChromeDev Tools to identify the XPATH's and Locators through the HTML code of the website <br/>
-<img src="https://i.imgur.com/foIaaEm.png" height="80%" width="80%" alt="Administrator Account"/>
+<img src="https://i.imgur.com/OPgZ1W4.jpg" height="80%" width="80%" alt="Administrator Account"/>
 <br />
 <br />
 This Selenium script sets up a Chrome browser session and locates various elements on a web page, such as login fields, buttons, and navigation links, using different selectors like ID and XPath for potential interaction.  <br/>
-<img src="https://i.imgur.com/AomMswT.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/iUORWeE.jpg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
 Verifies that clicking the 'Tablets' link on the homepage opens the correct page. <br/>
-<img src="https://i.imgur.com/WkkD2PP.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/yh1Jvbk.jpg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
 Confirms that an empty cart message is displayed after clicking the cart icon  <br/>
-<img src="https://i.imgur.com/5VFFJhv.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/bSNMzgH.jpg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
 Ensures clicking the user profile icon leads to the 'Login' page.  <br/>
-<img src="https://i.imgur.com/ZACzquy.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/1n3XvNQ.jpg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
 Tests the search functionality with various keywords (e.g., 'chromebook' and 'samsung') and verifies the correct search results page appears.  <br/>
-<img src="https://i.imgur.com/MQAssLf.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/R04NJsJ.jpg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
 </p>
