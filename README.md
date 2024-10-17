@@ -2,7 +2,8 @@
 
 <h2>Description</h2>
 In this test automation suite, built with Selenium and Pytest, validates key user interactions on the GetTop website. It includes tests for navigating to the 'Tablets' page, checking the empty cart message, verifying the 'Login' page via the profile icon, and testing the search functionality with different keywords (e.g., 'chromebook' and 'samsung'). Each test ensures the correct page elements are displayed, with browser sessions set up and closed automatically before and after execution.
-<img src="https://i.imgur.com/k636bYH.jpg" height="80%" width="80%" alt="Administrator Account"/>
+<video controls width="80%">
+  <source src="https://i.imgur.com/FiW5j4j.mp4" type="video/mp4">
 <br />
 
 <h2>Concepts</h2>
