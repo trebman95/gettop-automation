@@ -16,10 +16,10 @@ In this test automation suite, built with Selenium and Pytest, validates key use
 
 <h2>Languages and Utilities Used</h2>
 
-- <b>Selenium WebDriver</b>
-- <b>Python</b>
-- <b>PyCharm</b>
-- <b>PyTest</b>
+- <b>Selenium WebDriver 4.25.0</b>
+- <b>Python 3.12.5</b>
+- <b>PyCharm 2024.2.3</b>
+- <b>PyTest 8.3.3</b>
 - <b> ChromeDev Tools</b>
 
 <h2>Environments Used </h2>
@@ -36,7 +36,7 @@ Using ChromeDev Tools to identify the XPATH's and Locators through the HTML code
 <img src="https://i.imgur.com/OPgZ1W4.jpg" height="80%" width="80%" alt="Administrator Account"/>
 <br />
 <br />
-This Selenium script sets up a Chrome browser session and locates various elements on a web page, such as login fields, buttons, and navigation links, using different selectors like ID and XPath for potential interaction.  <br/>
+This Selenium script sets up a Chrome browser session and locates various elements on a web page, such as login fields, buttons, and navigation links, using different selectors like ID and XPath for potential interaction. In order to automate test castes. <br/>
 <img src="https://i.imgur.com/iUORWeE.jpg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
