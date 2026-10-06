@@ -17,8 +17,8 @@ if os.getenv("CI"):  # GitHub Actions sets CI=true automatically
     options.add_argument("--window-size=1920,1080")
 
 # Start the browser
-browser = webdriver.Chrome(service=Service(driver_path))
-driver = webdriver.Chrome(options=options)
+driver = webdriver.Chrome(service=Service(driver_path), options=options)
+browser = driver
 
 #Locators
 browser.find_element(By.ID, 'username') #Username, login pop-up
