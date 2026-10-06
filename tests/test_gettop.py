@@ -1,6 +1,8 @@
+import os
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
 from time import sleep
@@ -11,10 +13,18 @@ import pytest
 class TestGetTop:
     browser = None
 
-    def setup_method(self):
+  def setup_method(self):
+        # Headless options for CI (GitHub Actions sets CI=true automatically)
+        options = Options()
+        if os.getenv("CI"):
+            options.add_argument("--headless=new")
+            options.add_argument("--no-sandbox")
+            options.add_argument("--disable-dev-shm-usage")
+            options.add_argument("--window-size=1920,1080")
+
         # Install and start the browser
         driver_path = ChromeDriverManager().install()
-        self.browser = webdriver.Chrome(service=Service(driver_path))
+        self.browser = webdriver.Chrome(service=Service(driver_path), options=options
 
     def test_header_link_tablet(self):
         # Click 'Tablets' link on the homepage
@@ -62,4 +72,5 @@ class TestGetTop:
 
 
     def teardown_method(self):
-        self.browser.quit()
+        if self.browser:
+            self.browser.quit()
