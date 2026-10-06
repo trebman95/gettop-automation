@@ -24,7 +24,7 @@ class TestGetTop:
 
         # Install and start the browser
         driver_path = ChromeDriverManager().install()
-        self.browser = webdriver.Chrome(service=Service(driver_path), options=options
+        self.browser = webdriver.Chrome(service=Service(driver_path), options=options)
 
     def test_header_link_tablet(self):
         # Click 'Tablets' link on the homepage
