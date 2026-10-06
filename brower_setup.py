@@ -1,13 +1,24 @@
+import os
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
 
 
 # get the path to the ChromeDriver executable
 driver_path = ChromeDriverManager().install()
+
+options = Options()
+if os.getenv("CI"):  # GitHub Actions sets CI=true automatically
+    options.add_argument("--headless=new")
+    options.add_argument("--no-sandbox")
+    options.add_argument("--disable-dev-shm-usage")
+    options.add_argument("--window-size=1920,1080")
+
 # Start the browser
 browser = webdriver.Chrome(service=Service(driver_path))
+driver = webdriver.Chrome(options=options)
 
 #Locators
 browser.find_element(By.ID, 'username') #Username, login pop-up
