@@ -13,7 +13,7 @@ import pytest
 class TestGetTop:
     browser = None
 
-  def setup_method(self):
+    def setup_method(self):
         # Headless options for CI (GitHub Actions sets CI=true automatically)
         options = Options()
         if os.getenv("CI"):
